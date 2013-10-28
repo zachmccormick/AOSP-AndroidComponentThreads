@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.testproject"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.TestActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.example.TestLocalService" >
+        </service>
+        <service
+            android:name="com.example.TestRemoteService"
+            android:process=":remote" >
+        </service>
+        <provider
+            android:name="com.example.TestLocalContentProvider"
+            android:authorities="com.example.localprovider" >
+        </provider>
+        <provider
+            android:name="com.example.TestRemoteContentProvider"
+            android:authorities="com.example.remoteprovider"
+            android:process=":remote" >
+        </provider>
+        <receiver android:name="com.example.TestLocalBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="com.example.local" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.TestRemoteBroadcastReceiver"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.example.remote" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
