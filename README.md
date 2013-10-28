@@ -6,4 +6,4 @@ Local-process ContentProvider - runs on invoking thread
 Remote-process ContentProvider - runs on a thread in a thread pool on remote application process
 Remote-process (AIDL) Service - runs on a thread in a thread pool on remote application process
 Local-process BroadcastReceiver - always runs in UI/main thread
-Remote-process BroadcastReceiver - always runs in UI/main thread
+Remote-process BroadcastReceiver - always runs in UI/main thread of remote process
